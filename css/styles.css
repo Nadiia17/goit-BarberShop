@@ -236,6 +236,7 @@ body {
 
 .logo {
   margin-right: 124px;
+  fill: var(--main-txt-cl);
 }
 
 .header {
@@ -304,10 +305,18 @@ body {
 .hero-title {
   margin-bottom: 20px;
 
+  width: fit-content;
+
   font-size: 72px;
   line-height: 1.18;
   letter-spacing: 0.05em;
   color: var(--light-txt-color);
+
+  /* Gradient */
+  color: transparent;
+  background-color: #f7ff00;
+  background-image: linear-gradient(to right, #db36a4, #f7ff00);
+  -webkit-background-clip: text;
 }
 
 .hero-desc {
@@ -494,6 +503,8 @@ body {
 
 .employee-card-wrapper {
   padding-top: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 /* .employee-card:not(:nth-child(3n)) {
@@ -515,12 +526,43 @@ body {
 }
 
 .barber-position {
+  margin-bottom: 30px;
+
   font-size: 14px;
   line-height: 1.36;
   text-align: center;
   letter-spacing: 0.02em;
 
   color: var(--accent-color);
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.socials-item {
+}
+.sosials-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 44px;
+  height: 44px;
+
+  border-radius: 50%;
+  background-color: var(--light-txt-color);
+  color: var(--main-txt-cl);
+}
+.socials-icon {
+  fill: currentColor;
+}
+
+.sosials-link:hover .socials-icon,
+.sosials-link:focus .socials-icon {
+  fill: var(--accent-color);
 }
 
 /**
@@ -562,8 +604,10 @@ body {
   flex-basis: 570px;
 }
 
-.address {
-  font-style: normal;
+.address-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .contacts-address {
@@ -571,7 +615,9 @@ body {
 }
 
 .contact-link {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 16px;
   font-weight: 400;
 
   font-size: 18px;
