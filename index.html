@@ -12,11 +12,16 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Raleway:wght@700&display=swap"
       rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize@1.1.0/modern-normalize.min.css" />
+
+    <!-- Animation on scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- My Styles -->
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
 
   <body>
-    <header class="header">
+    <!-- Header Section -->
+    <header class="header" data-header>
       <div class="container page-header-container">
         <nav class="page-nav">
           <a href="./index.html" aria-label="BarberShop logo">
@@ -41,7 +46,7 @@
         </nav>
 
         <a class="link header-tel-link" href="tel:+380441111111">+38 044 111 11 11</a>
-        <button class="button" type="button">Online-booking</button>
+        <button class="button" type="button" data-modal-open>Online-booking</button>
       </div>
     </header>
 
@@ -64,9 +69,11 @@
             </ul>
           </div>
           <div class="hero-right-side">
-            <p class="suptitle suptitle-dark-theme">A hair salon for men in Kyiv</p>
+            <p class="suptitle suptitle-dark-theme hero-suptitle" style="--direction: -1">
+              A hair salon for men in Kyiv
+            </p>
             <h1 class="hero-title">BarberShop</h1>
-            <p class="section-desc section-desc-dark-theme hero-desc">
+            <p class="section-desc section-desc-dark-theme hero-desc" style="--direction: 1">
               We are experts in trendy men's haircuts. We work quickly, carefully and with style.
             </p>
           </div>
@@ -304,16 +311,16 @@
           <p class="suptitle gallery-suptitle">In Latin, "barba" means "beard"</p>
           <h2 hidden>Our Gallery</h2>
           <ul class="card-set gallery-list list">
-            <li class="card-set-item">
+            <li class="card-set-item" data-aos="flip-right" data-aos-duration="800" data-aos-delay="300">
               <img src="./images/gallery/img-1.jpg" alt="" width="270" height="360" />
             </li>
-            <li class="card-set-item">
+            <li class="card-set-item" data-aos="flip-right" data-aos-duration="800" data-aos-delay="600">
               <img src="./images/gallery/img-2.jpg" alt="" width="270" height="360" />
             </li>
-            <li class="card-set-item">
+            <li class="card-set-item" data-aos="flip-right" data-aos-duration="800" data-aos-delay="900">
               <img src="./images/gallery/img-3.jpg" alt="" width="270" height="360" />
             </li>
-            <li class="card-set-item">
+            <li class="card-set-item" data-aos="flip-right" data-aos-duration="800" data-aos-delay="1200">
               <img src="./images/gallery/img-4.jpg" alt="" width="270" height="360" />
             </li>
           </ul>
@@ -385,5 +392,21 @@
         </ul>
       </div>
     </footer>
+    <!-- Modal window -->
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button class="modal-close-btn" data-modal-close>
+          <svg class="modal-close-icon" width="12" height="12">
+            <use href="./images/icons.svg#close-modal"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <!-- Scripts -->
+    <!--AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./js/animation-on-scroll.js"></script>
+    <script src="./js/header.js"></script>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
